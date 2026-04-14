@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeFlight - Fly Beyond Horizons</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      background-color: #f0f9ff;
+    }
+    
+    @keyframes planeDiagonal {
+      0% { 
+        transform: translate(-120%, 120%) rotate(30deg) scale(0.4); 
+        opacity: 0; 
+      }
+      15% { 
+        opacity: 1; 
+      }
+      50% {
+        transform: translate(50%, -50%) rotate(10deg) scale(1.1);
+      }
+      100% { 
+        transform: translate(350%, -350%) rotate(-5deg) scale(2.2); 
+        opacity: 0; 
+      }
+    }
+
+    .animate-plane-diagonal {
+      animation: planeDiagonal 4.5s cubic-bezier(0.45, 0.05, 0.55, 0.95) forwards;
+    }
+
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .colorful-btn {
+      background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 4px 15px rgba(14, 165, 233, 0.2);
+    }
+
+    .colorful-btn:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 15px 30px -5px rgba(14, 165, 233, 0.4);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f0f9ff;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(to bottom, #bae6fd, #7dd3fc);
+      border-radius: 20px;
+      border: 2px solid #f0f9ff;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #38bdf8;
+    }
+
+    @keyframes pulse-soft {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(0.98); }
+    }
+    .animate-pulse-soft {
+      animation: pulse-soft 2.5s infinite ease-in-out;
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.39.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react/": "https://esm.sh/react@^19.2.4/"
+  }
+}
+</script>
+</head>
+<body class="text-slate-700">
+  <div id="root"></div>
+</body>
+</html>
