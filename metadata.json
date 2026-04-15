@@ -3,5 +3,7 @@
   "description": "An elegant flight booking platform with sky blue aesthetics and AI-powered travel assistance.",
   "requestFramePermissions": [
     "geolocation"
-  ]
+  ],
+  "C7": [],
+  "aq": []
 }
